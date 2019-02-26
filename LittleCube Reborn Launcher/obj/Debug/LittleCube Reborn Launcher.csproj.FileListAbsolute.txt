@@ -1,0 +1,13 @@
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\bin\Debug\LittleCube Reborn Launcher.exe.config
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\bin\Debug\LittleCube Reborn Launcher.exe
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\bin\Debug\LittleCube Reborn Launcher.pdb
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.csprojResolveAssemblyReference.cache
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube_Reborn_Launcher.Properties.Resources.resources
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.csproj.GenerateResource.cache
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.csproj.CoreCompileInputs.cache
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.exe
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.pdb
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube_Reborn_Launcher.VuePrincipale.resources
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\bin\Debug\YARTE.pdb
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\obj\Debug\LittleCube Reborn Launcher.csproj.CopyComplete
+D:\Projets VB\Repos\jerome_coder\LittleCube Reborn Launcher\LittleCube Reborn Launcher\bin\Debug\Bunifu_UI_v1.4.dll
