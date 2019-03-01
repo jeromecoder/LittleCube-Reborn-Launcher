@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -21,10 +23,11 @@ namespace LittleCube_Reborn_Launcher
         public VuePrincipale()
         {
             InitializeComponent();
-            this.Size = Statics.FormSize;
+            Size = Statics.FormSize;
             this.HideAllPanelsExeptMe(PanelInformations);
             richtext_informations.Rtf = Resources.No_server;
             UserPanel.Visible = false;
+            FillDropdownLists();
         }
 
         #region Déplacement de la fenêtre
@@ -157,7 +160,7 @@ namespace LittleCube_Reborn_Launcher
 
             string user = listbox_identifiants.SelectedItem.ToString().Replace("[Défaut]", "");
             this.listbox_identifiants.Items.RemoveAt(this.listbox_identifiants.SelectedIndex);            
-            Fonctions.deleteUserFromRegistry(user);
+            Fonctions.DeleteUserFromRegistry(user);
         }
         private void compteParDéfautToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -244,7 +247,123 @@ namespace LittleCube_Reborn_Launcher
             ArrayList a = Fonctions.GetAllUsers();
             if (!(a is null)) listbox_Profil.Items.AddRange(a.ToArray());
         }
+        private void FillDropdownLists()
+        {
+            RamAllocation.AddItem("128M");
+            RamAllocation.AddItem("512M");
+            RamAllocation.AddItem("1G");
+            RamAllocation.AddItem("2G");
+            RamAllocation.AddItem("3G");
+            RamAllocation.AddItem("4G");
+            RamAllocation.AddItem("6G");
+            RamAllocation.AddItem("8G");
+            RamAllocation.AddItem("10G");
+            RamAllocation.AddItem("12G");
+            RamAllocation.AddItem("16G");
+            RamAllocation.AddItem("20G");
+            RamAllocation.AddItem("24G");
+            RamAllocation.AddItem("32G");
+
+            foreach (string s in Fonctions.GetJavaHome().Keys.ToArray<String>())
+            {
+                JavaVersion.AddItem(s.Replace("  ",""));
+            }
+
+        }
+        private void listbox_Profil_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (((ListBox)sender).SelectedIndex > -1)
+            {
+                UserPanel.Visible = true;
+                SetUserPanelInfos(((ListBox)sender).SelectedItem.ToString().Replace("[Défaut]",""));
+            }
+        }
+
+        private void SetUserPanelInfos(string user)
+        {
+            ArrayList a = Fonctions.GetUser(user);
+            ArrayList auth = Fonctions.Authentification(a[0].ToString(), a[1].ToString());
+
+            if (!auth[0].Equals("Erreur"))
+            {
+                try
+                {
+                    this.UserHead.Image = new Bitmap(new MemoryStream(new WebClient().DownloadData("https://minotar.net/cube/" + auth[4] + "/100.png")));
+                    this.UserHead.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception) {
+                    try
+                    {
+                        this.UserHead.Image = new Bitmap(new MemoryStream(new WebClient().DownloadData("https://minotar.net/cube/Alex/100.png")));
+                        this.UserHead.SizeMode = PictureBoxSizeMode.StretchImage;
+                    }
+                    catch (Exception) { }
+                }
+
+                UserPanel.ForeColor = Color.White;
+                UserPanel.Text = auth[4].ToString();
+
+                try
+                {
+                    RamAllocation.selectedIndex = GetIndexFromValue(RamAllocation, Fonctions.GetRAMFromUser(a[0].ToString()));
+                }
+                catch (Exception){}
+
+                try
+                {
+                    JavaVersion.selectedIndex = GetIndexFromValue(RamAllocation, Fonctions.GetJAVAFromUser(a[0].ToString()));
+                }
+                catch (Exception){}
+            }                     
+        }
+
+        private int GetIndexFromValue(Bunifu.Framework.UI.BunifuDropdown bd, string s)
+        {
+            for (int i = 0; i < bd.Items.Length; i++)
+            {
+                if (bd.Items[i].Equals("s"))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
         #endregion
 
+        private void SaveProfil_Click(object sender, EventArgs e)
+        {
+            if (RamAllocation.selectedIndex == -1)
+            {
+                SetBackColorForAnimation(RamAllocation, Color.DarkRed);
+                return;
+            }
+
+            if (JavaVersion.selectedIndex == -1)
+            {
+                SetBackColorForAnimation(JavaVersion, Color.DarkRed);
+                return;
+            }
+
+            Fonctions.WriteRAMAllocatedToRegistry(listbox_Profil.SelectedItem.ToString().Replace("[Défaut]", ""), RamAllocation.selectedValue.ToString());
+            Fonctions.WriteRJAVAVersionToUseToRegistry(listbox_Profil.SelectedItem.ToString().Replace("[Défaut]", ""), JavaVersion.selectedValue.ToString());
+
+            UserPanel.Visible = false;
+        }
+
+        private void SetBackColorForAnimation(Control control, Color color)
+        {
+            Thread t = new Thread(() =>
+            {
+                Color defaultColor = control.BackColor;
+                MethodInvoker inv = (MethodInvoker)delegate() { control.BackColor = color; };
+                control.Invoke(inv);
+                Thread.Sleep(1500);
+                inv = (MethodInvoker)delegate () { control.BackColor = defaultColor; };
+                control.Invoke(inv);
+            });
+            t.Start();
+        }
     }
 }

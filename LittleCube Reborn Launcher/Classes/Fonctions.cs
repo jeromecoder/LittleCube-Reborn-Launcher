@@ -74,7 +74,7 @@ namespace LittleCube_Reborn_Launcher.Classes
         {
             ArrayList liste = new ArrayList();
 
-            RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\LittleCube\\Launcher\\Identifiants\\" + user, false);
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey(Statics.RegRootIdentifiants + "\\" + user, false);
             if (!(reg is null))
             {
                 liste.Add(reg.GetValue("User"));
@@ -84,7 +84,7 @@ namespace LittleCube_Reborn_Launcher.Classes
 
             return liste;
         }
-        public static void deleteUserFromRegistry(string user)
+        public static void DeleteUserFromRegistry(string user)
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(Statics.RegRootIdentifiants, true);
             reg.DeleteSubKey(user);
@@ -99,18 +99,17 @@ namespace LittleCube_Reborn_Launcher.Classes
 
             reg.Close();
         }
-        public static void WriteRJAVAVersionToUseToRegistry(string user, string java, string path)
+        public static void WriteRJAVAVersionToUseToRegistry(string user, string java)
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey(Statics.RegRootIdentifiants + "\\" + user, true);
 
             if (!(reg == null))
             {
                 reg.SetValue("JAVAversion", java);
-                reg.SetValue("JAVApath", path);
             }
             reg.Close();
         }
-        public static string getJAVAFromUser(string user)
+        public static string GetJAVAFromUser(string user)
         {
             string java = "";
 
@@ -139,7 +138,7 @@ namespace LittleCube_Reborn_Launcher.Classes
             }
             regRoot.Close();
         }
-        public static Dictionary<string,string> getJavaHome()
+        public static Dictionary<string,string> GetJavaHome()
         {
             Dictionary<string, string> javaVersionsList = new Dictionary<string, string>();
             try
@@ -148,7 +147,7 @@ namespace LittleCube_Reborn_Launcher.Classes
                 {
                     if (File.Exists(d + @"\bin\java.exe"))
                     {
-                        string version = Fonctions.getJavaVersionFromDirectory(d);
+                        string version = Fonctions.GetJavaVersionFromDirectory(d);
                         if (!version.Equals(""))
                         {
                             if (Environment.Is64BitOperatingSystem)
@@ -169,7 +168,7 @@ namespace LittleCube_Reborn_Launcher.Classes
                     {
                         if (File.Exists(d + @"\bin\java.exe"))
                         {
-                            string version = Fonctions.getJavaVersionFromDirectory(d);
+                            string version = Fonctions.GetJavaVersionFromDirectory(d);
                             if (!version.Equals(""))
                                 javaVersionsList.Add(version + " (32 bit)", d + @"\bin\javaw.exe");
                         }
@@ -182,7 +181,7 @@ namespace LittleCube_Reborn_Launcher.Classes
 
             return javaVersionsList;
         }
-        public static string getJavaVersionFromDirectory(string d)
+        public static string GetJavaVersionFromDirectory(string d)
         {
             string version = "";
             try
@@ -257,6 +256,18 @@ namespace LittleCube_Reborn_Launcher.Classes
 
             return new ArrayList { "Erreur" };
         }
+        public static string GetRAMFromUser(string user)
+        {
+            string ram = "";
 
+            RegistryKey reg;
+            reg = Registry.CurrentUser.OpenSubKey(Statics.RegRootIdentifiants + "\\" + user, false);
+
+            if (!(reg is null))
+                ram = reg.GetValue("RAM").ToString();
+
+            reg.Close();
+            return ram;
+        }
     }
 }

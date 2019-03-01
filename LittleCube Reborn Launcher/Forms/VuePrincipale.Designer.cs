@@ -62,12 +62,12 @@
             this.button6 = new System.Windows.Forms.Button();
             this.panelProfils = new System.Windows.Forms.Panel();
             this.UserPanel = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.SaveProfil = new System.Windows.Forms.Button();
             this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown2 = new Bunifu.Framework.UI.BunifuDropdown();
+            this.JavaVersion = new Bunifu.Framework.UI.BunifuDropdown();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuDropdown1 = new Bunifu.Framework.UI.BunifuDropdown();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.RamAllocation = new Bunifu.Framework.UI.BunifuDropdown();
+            this.UserHead = new System.Windows.Forms.PictureBox();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.listbox_Profil = new System.Windows.Forms.ListBox();
@@ -84,7 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panelProfils.SuspendLayout();
             this.UserPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserHead)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -232,9 +232,9 @@
             this.PanelIdentifiants.Controls.Add(this.bunifuCustomLabel1);
             this.PanelIdentifiants.Controls.Add(this.listbox_identifiants);
             this.PanelIdentifiants.Controls.Add(this.pictureBox3);
-            this.PanelIdentifiants.Location = new System.Drawing.Point(1045, 354);
+            this.PanelIdentifiants.Location = new System.Drawing.Point(862, 228);
             this.PanelIdentifiants.Name = "PanelIdentifiants";
-            this.PanelIdentifiants.Size = new System.Drawing.Size(124, 227);
+            this.PanelIdentifiants.Size = new System.Drawing.Size(365, 413);
             this.PanelIdentifiants.TabIndex = 9;
             this.PanelIdentifiants.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.PanelIdentifiants.MouseHover += new System.EventHandler(this.PanelIdentifiants_MouseHover);
@@ -395,7 +395,7 @@
             this.pictureBox3.Image = global::LittleCube_Reborn_Launcher.Properties.Resources.Identifiants;
             this.pictureBox3.Location = new System.Drawing.Point(0, 0);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(124, 126);
+            this.pictureBox3.Size = new System.Drawing.Size(365, 126);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
@@ -467,36 +467,37 @@
             this.panelProfils.Controls.Add(this.pictureBox5);
             this.panelProfils.Location = new System.Drawing.Point(201, 1);
             this.panelProfils.Name = "panelProfils";
-            this.panelProfils.Size = new System.Drawing.Size(606, 551);
+            this.panelProfils.Size = new System.Drawing.Size(700, 551);
             this.panelProfils.TabIndex = 13;
             // 
             // UserPanel
             // 
-            this.UserPanel.Controls.Add(this.button7);
+            this.UserPanel.Controls.Add(this.SaveProfil);
             this.UserPanel.Controls.Add(this.bunifuCustomLabel10);
-            this.UserPanel.Controls.Add(this.bunifuDropdown2);
+            this.UserPanel.Controls.Add(this.JavaVersion);
             this.UserPanel.Controls.Add(this.bunifuCustomLabel8);
-            this.UserPanel.Controls.Add(this.bunifuDropdown1);
-            this.UserPanel.Controls.Add(this.pictureBox6);
+            this.UserPanel.Controls.Add(this.RamAllocation);
+            this.UserPanel.Controls.Add(this.UserHead);
             this.UserPanel.Font = new System.Drawing.Font("Minecraft", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserPanel.Location = new System.Drawing.Point(319, 149);
+            this.UserPanel.Location = new System.Drawing.Point(335, 171);
             this.UserPanel.Name = "UserPanel";
-            this.UserPanel.Size = new System.Drawing.Size(283, 264);
+            this.UserPanel.Size = new System.Drawing.Size(347, 264);
             this.UserPanel.TabIndex = 7;
             this.UserPanel.TabStop = false;
             this.UserPanel.Text = "groupBox1";
             // 
-            // button7
+            // SaveProfil
             // 
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.Location = new System.Drawing.Point(201, 169);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(77, 79);
-            this.button7.TabIndex = 6;
-            this.button7.UseVisualStyleBackColor = true;
+            this.SaveProfil.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.SaveProfil.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Green;
+            this.SaveProfil.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SaveProfil.Image = ((System.Drawing.Image)(resources.GetObject("SaveProfil.Image")));
+            this.SaveProfil.Location = new System.Drawing.Point(267, 169);
+            this.SaveProfil.Name = "SaveProfil";
+            this.SaveProfil.Size = new System.Drawing.Size(77, 79);
+            this.SaveProfil.TabIndex = 6;
+            this.SaveProfil.UseVisualStyleBackColor = true;
+            this.SaveProfil.Click += new System.EventHandler(this.SaveProfil_Click);
             // 
             // bunifuCustomLabel10
             // 
@@ -509,19 +510,21 @@
             this.bunifuCustomLabel10.Text = "Version de JAVA";
             this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuDropdown2
+            // JavaVersion
             // 
-            this.bunifuDropdown2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown2.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown2.Items = new string[0];
-            this.bunifuDropdown2.Location = new System.Drawing.Point(16, 223);
-            this.bunifuDropdown2.Margin = new System.Windows.Forms.Padding(20, 6, 20, 6);
-            this.bunifuDropdown2.Name = "bunifuDropdown2";
-            this.bunifuDropdown2.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown2.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown2.selectedIndex = -1;
-            this.bunifuDropdown2.Size = new System.Drawing.Size(162, 25);
-            this.bunifuDropdown2.TabIndex = 9;
+            this.JavaVersion.BackColor = System.Drawing.Color.Transparent;
+            this.JavaVersion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.JavaVersion.Font = new System.Drawing.Font("Minecraft", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JavaVersion.ForeColor = System.Drawing.Color.White;
+            this.JavaVersion.Items = new string[0];
+            this.JavaVersion.Location = new System.Drawing.Point(16, 223);
+            this.JavaVersion.Margin = new System.Windows.Forms.Padding(20, 6, 20, 6);
+            this.JavaVersion.Name = "JavaVersion";
+            this.JavaVersion.NomalColor = System.Drawing.Color.Transparent;
+            this.JavaVersion.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.JavaVersion.selectedIndex = -1;
+            this.JavaVersion.Size = new System.Drawing.Size(240, 25);
+            this.JavaVersion.TabIndex = 9;
             // 
             // bunifuCustomLabel8
             // 
@@ -534,33 +537,35 @@
             this.bunifuCustomLabel8.Text = "Allocation RAM";
             this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bunifuDropdown1
+            // RamAllocation
             // 
-            this.bunifuDropdown1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuDropdown1.ForeColor = System.Drawing.Color.White;
-            this.bunifuDropdown1.Items = new string[0];
-            this.bunifuDropdown1.Location = new System.Drawing.Point(16, 169);
-            this.bunifuDropdown1.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
-            this.bunifuDropdown1.Name = "bunifuDropdown1";
-            this.bunifuDropdown1.NomalColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuDropdown1.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuDropdown1.selectedIndex = -1;
-            this.bunifuDropdown1.Size = new System.Drawing.Size(162, 25);
-            this.bunifuDropdown1.TabIndex = 1;
+            this.RamAllocation.BackColor = System.Drawing.Color.Transparent;
+            this.RamAllocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RamAllocation.Font = new System.Drawing.Font("Minecraft", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RamAllocation.ForeColor = System.Drawing.Color.White;
+            this.RamAllocation.Items = new string[0];
+            this.RamAllocation.Location = new System.Drawing.Point(16, 169);
+            this.RamAllocation.Margin = new System.Windows.Forms.Padding(8, 4, 8, 4);
+            this.RamAllocation.Name = "RamAllocation";
+            this.RamAllocation.NomalColor = System.Drawing.Color.Transparent;
+            this.RamAllocation.onHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.RamAllocation.selectedIndex = -1;
+            this.RamAllocation.Size = new System.Drawing.Size(240, 25);
+            this.RamAllocation.TabIndex = 1;
             // 
-            // pictureBox6
+            // UserHead
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(15, 27);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(126, 106);
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
+            this.UserHead.Location = new System.Drawing.Point(15, 27);
+            this.UserHead.Name = "UserHead";
+            this.UserHead.Size = new System.Drawing.Size(126, 106);
+            this.UserHead.TabIndex = 0;
+            this.UserHead.TabStop = false;
             // 
             // bunifuCustomLabel5
             // 
             this.bunifuCustomLabel5.AutoSize = true;
             this.bunifuCustomLabel5.Font = new System.Drawing.Font("Minecrafter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(105, 142);
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(118, 164);
             this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(102, 12);
             this.bunifuCustomLabel5.TabIndex = 6;
@@ -571,7 +576,7 @@
             // 
             this.bunifuCustomLabel7.AutoSize = true;
             this.bunifuCustomLabel7.Font = new System.Drawing.Font("Minecrafter", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(40, 338);
+            this.bunifuCustomLabel7.Location = new System.Drawing.Point(53, 360);
             this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(233, 72);
             this.bunifuCustomLabel7.TabIndex = 5;
@@ -586,10 +591,11 @@
             this.listbox_Profil.Font = new System.Drawing.Font("Minecraft", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listbox_Profil.ForeColor = System.Drawing.Color.White;
             this.listbox_Profil.FormattingEnabled = true;
-            this.listbox_Profil.Location = new System.Drawing.Point(3, 158);
+            this.listbox_Profil.Location = new System.Drawing.Point(16, 180);
             this.listbox_Profil.Name = "listbox_Profil";
             this.listbox_Profil.Size = new System.Drawing.Size(313, 173);
             this.listbox_Profil.TabIndex = 4;
+            this.listbox_Profil.SelectedIndexChanged += new System.EventHandler(this.listbox_Profil_SelectedIndexChanged);
             // 
             // pictureBox5
             // 
@@ -597,7 +603,7 @@
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
             this.pictureBox5.Location = new System.Drawing.Point(0, 0);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(606, 126);
+            this.pictureBox5.Size = new System.Drawing.Size(700, 126);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox5.TabIndex = 1;
             this.pictureBox5.TabStop = false;
@@ -607,9 +613,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.ClientSize = new System.Drawing.Size(1214, 653);
-            this.Controls.Add(this.panelProfils);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button6);
+            this.Controls.Add(this.panelProfils);
             this.Controls.Add(this.PanelInformations);
             this.Controls.Add(this.PanelJouer);
             this.Controls.Add(this.PanelIdentifiants);
@@ -637,7 +643,7 @@
             this.panelProfils.PerformLayout();
             this.UserPanel.ResumeLayout(false);
             this.UserPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserHead)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.ResumeLayout(false);
 
@@ -681,11 +687,11 @@
         private System.Windows.Forms.ListBox listbox_Profil;
         private System.Windows.Forms.GroupBox UserPanel;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown1;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.Button button7;
+        private Bunifu.Framework.UI.BunifuDropdown RamAllocation;
+        private System.Windows.Forms.PictureBox UserHead;
+        private System.Windows.Forms.Button SaveProfil;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
-        private Bunifu.Framework.UI.BunifuDropdown bunifuDropdown2;
+        private Bunifu.Framework.UI.BunifuDropdown JavaVersion;
         private System.Windows.Forms.PictureBox showPassword;
     }
 }
